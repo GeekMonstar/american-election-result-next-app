@@ -1,13 +1,14 @@
 import styles from "./page.module.scss";
 import MainResult from "@/components/MainResult";
-import { getResult } from "./action";
 import GolbalResults from "@/components/GolbalResults";
+import { electionResult } from "@/lib/data";
 
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-  const result = await getResult();
+  const result = electionResult as Result;
   console.log(result.results_by_state);
+  console.log("path:",__dirname);
   return (
     <div className={styles.container}>
       <MainResult result={result} />
