@@ -3,7 +3,7 @@ import MainResult from "@/components/MainResult";
 import { getResult } from "./action";
 import GolbalResults from "@/components/GolbalResults";
 
-export const dynamic = 'force-dynamic';
+// export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const result = await getResult();
