@@ -37,7 +37,6 @@ export default function MainResult({result}:{result: Result}){
                 if(element){
                   element.addEventListener("click", (e: Event)=>{
                     e.stopPropagation();
-                    // alert("Vous avez cliqué sur "+result.state);
                     console.log(e.target);
                   })
                   if(result.winner === "Trump"){
@@ -64,30 +63,30 @@ export default function MainResult({result}:{result: Result}){
         <p>L’AP a déclaré le vainqueur</p>
         <div className={styles["result-component"]}>
           <div className={styles["result-component__scores"]}>
-            <div className={styles["result-component__scores--score-democrate"]}>
-              <div className={styles["result-component__scores--score-democrate--photo"]}>
-                <Image src="/images/avatars/Harris.png" width={48} height={48} alt="Harris" />
+            <div className={styles["result-component__scores--score"]}>
+              <div className={styles["result-component__scores--score--photo"]} style={{border: winner === "Kamala Harris" ? "3px solid rgb(77,100,255)" : "1px solid rgb(77,100,255)"}}>
+                <Image src="/images/avatars/Harris.png" width={48} height={48} alt="Harris" style={{background: "rgba(77,100,255,50)"}} />
               </div>
-              <div className={styles["result-component__scores--score-democrate--data"]}>
-                <p className={styles["result-component__scores--score-democrate--data--number"]}>{score.Harris}</p>
+              <div className={styles["result-component__scores--scor--data"]}>
+                <p className={styles["result-component__scores--score--data--number"]} style={{color: "rgb(77,100,255)"}}>{score.Harris}</p>
                 <p>{result.candidates[1].name.split(" ")[1]}</p>
               </div>
             </div>
-            <div className={styles["result-component__scores--score-republican"]}>
-              <div className={styles["result-component__scores--score-republican--photo"]}>
-                <Image src="/images/avatars/Trump.png" width={48} height={48} alt="Harris" />
+            <div className={styles["result-component__scores--score"]}>
+              <div className={styles["result-component__scores--score--photo"]} style={{border: winner === "Donald Trump" ? "3px solid rgb(207,32,53,50)" : "1px solid rgb(207,32,53,50)"}}>
+                <Image src="/images/avatars/Trump.png" width={48} height={48} alt="Harris" style={{background: "rgba(207,32,53,50)"}} />
               </div>
-              <div className={styles["result-component__scores--score-republican--data"]}>
-                <p className={styles["result-component__scores--score-republican--data--number"]}>{score.Trump}</p>
+              <div className={styles["result-component__scores--score--data"]}>
+                <p className={styles["result-component__scores--score--data--number"]} style={{color: "rgb(207,32,53)"}}>{score.Trump}</p>
                 <p>{result.candidates[0].name.split(" ")[1]}</p>
               </div>
             </div>
           </div>
-          <div className={styles["result-component__bar"]}>
-            <div className={styles["result-component__bar--democrate"]} style={{width:`${percentages.Harris}%`}}></div>
-            <div className={styles["result-component__bar--republican"]} style={{width:`${percentages.Trump}%`}}></div>
-            <div className={styles["result-component__bar--middle"]}></div>
-            <p className={styles["result-component__bar--number"]}>270 pour gagner</p>
+          <div className={styles["result-component__bars"]}>
+            <div className={styles["result-component__bars--bar"]} style={{width:`${percentages.Harris}%`, background: "rgb(77,100,255)"}}></div>
+            <div className={styles["result-component__bars--bar"]} style={{width:`${percentages.Trump}%`, background: "rgb(207,32,53)"}}></div>
+            <div className={styles["result-component__bars--bar--middle"]}></div>
+            <p className={styles["result-component__bars--bar--number"]}>270 pour gagner</p>
           </div>
         </div>
         <svg ref={svgRef} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 800" version="1.1">

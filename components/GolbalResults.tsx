@@ -6,8 +6,9 @@ export default function GolbalResults({resultsByState}:{resultsByState: Result["
   return (
     <div className={styles["global-result"]}>
       <h2>Resultats par état</h2>
-      <div className={styles["global-result__container"]}></div>
-      {resultsByState.map(result=> <StateResult key={result.code} result={result} />)}
+      <div className={styles["global-result__container"]}>
+        {resultsByState.map(result=> <StateResult key={result.code} result={result} />)}
+      </div>
     </div>
   );
 }
