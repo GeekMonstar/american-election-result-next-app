@@ -3,6 +3,8 @@ import MainResult from "@/components/MainResult";
 import { getResult } from "./action";
 import GolbalResults from "@/components/GolbalResults";
 
+
+
 export default async function Home() {
   const result = await getResult();
   console.log(result.results_by_state);
