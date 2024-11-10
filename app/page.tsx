@@ -3,8 +3,6 @@ import MainResult from "@/components/MainResult";
 import GolbalResults from "@/components/GolbalResults";
 import { electionResult } from "@/lib/data";
 
-export const dynamic = 'force-dynamic'
-
 export default async function Home() {
   const result = electionResult as Result;
   console.log(result.results_by_state);
