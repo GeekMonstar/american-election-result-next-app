@@ -72,7 +72,7 @@ export default function MainResult({result}:{result: Result}){
                 <p>{result.candidates[1].name.split(" ")[1]}</p>
               </div>
             </div>
-            <div className={styles["result-component__scores--score"]}>
+            <div className={styles["result-component__scores--score"]} style={{flexDirection: "row-reverse"}}>
               <div className={styles["result-component__scores--score--photo"]} style={{border: winner === "Donald Trump" ? "3px solid rgb(207,32,53,50)" : "1px solid rgb(207,32,53,50)"}}>
                 <Image src="/images/avatars/Trump.png" width={48} height={48} alt="Harris" style={{background: "rgba(207,32,53,50)"}} />
               </div>
